@@ -6,6 +6,7 @@
 - Repository checks: `uv run shellcheck scripts/*.sh tests/*.sh`, `uv run actionlint`, `uv run zizmor --offline .github`, `uv run typos`, `uv run reuse lint`.
 - Regenerate the docs tables after a data change: `uv run python src/docs.py` (`tests/test_docs.py` fails while they are stale).
 - Generate presets into `out/` without installing: `scripts/build.sh --no-install`. Release files into `dist/`: `scripts/release.sh vX.Y.Z`. Docs site: `npm run build` in `site/`.
+- Agents never run the install form of `scripts/build.sh` (without `--no-install` it writes into the Bambu Studio profile folder) and never run `scripts/release.sh --publish`: both stay with the owner.
 - Changed-files check, run before every push (the CI jobs `python`, `repository` and `generate`; add `npm run build` in `site/` when `site/` or `docs/` changed):
   `uv run ruff check && uv run ruff format --check && uv run basedpyright && uv run pytest && uv run shellcheck scripts/*.sh tests/*.sh && uv run actionlint && uv run zizmor --offline .github && uv run typos && uv run reuse lint && uv run python -c 'import json, sys; [json.load(open(f)) for f in sys.argv[1:]]' config/*.json && tests/check.sh && scripts/release.sh v0.0.0`
 
@@ -42,7 +43,7 @@
 - The Bambu Studio release and stock profile tree pinned in `upstream.lock.toml`, and every nozzle, print style and filament in `config/h3c.json` and `config/filaments.json`.
 - Generating, checking and releasing on Linux and macOS; installing (`scripts/build.sh` without `--no-install`) on Linux only.
 - The release files: the preset zips, `manifest.json` (`schemas/manifest.schema.json`), `NOTICE.md` and `SHA256SUMS`, identical across two runs on one commit.
-- The docs site built from `docs/` (`site/`), including the tables `src/docs.py` generates.
+- The docs site built from `docs/` (`site/`), including the tables `src/docs.py` generates. A merge that changes `docs/` or `site/` deploys the public site; that deploy is accepted as part of a normal reviewed merge.
 - [Side effects outside the repository](docs/agents/side-effects.md): the Bambu Studio preset folder, the fetch cache, the golden files, publishing a release.
 
 ## Pointers
