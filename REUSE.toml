@@ -13,6 +13,8 @@ path = [
     "schemas/**",
     "site/src/**",
     "README.md",
+    "AGENTS.md",
+    "CLAUDE.md",
     "pyproject.toml",
     "uv.lock",
     "upstream.lock.toml",
