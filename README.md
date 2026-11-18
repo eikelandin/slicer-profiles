@@ -6,7 +6,7 @@ v0.1.0 and earlier targeted the Snapmaker U1, Bambu Lab P2S and Qidi X-Max 4; th
 
 ## Download
 
-The zip is attached to each [release](https://github.com/ESchuderer/slicer-profiles/releases/latest): [docs/install.md](docs/install.md). What the presets set: [docs/profiles.md](docs/profiles.md). Every preset: [docs/catalog.md](docs/catalog.md).
+The zip is attached to each [release](https://github.com/eikelandin/slicer-profiles/releases/latest): [docs/install.md](docs/install.md). What the presets set: [docs/profiles.md](docs/profiles.md). Every preset: [docs/catalog.md](docs/catalog.md).
 
 ## Layout
 
@@ -42,8 +42,10 @@ The gates CI runs (one required check, `check`) need [uv](https://docs.astral.sh
 ```
 uv sync --locked
 uv run ruff check && uv run ruff format --check && uv run basedpyright && uv run pytest
-uv run shellcheck scripts/*.sh tests/*.sh && uv run actionlint && uv run zizmor .github && uv run typos && uv run reuse lint
+uv run shellcheck scripts/*.sh tests/*.sh && uv run actionlint && uv run zizmor --format=github .github && uv run typos && uv run reuse lint
 ```
+
+zizmor runs its online audits only when `GH_TOKEN`, `GITHUB_TOKEN` or `ZIZMOR_GITHUB_TOKEN` is set ([operating modes](https://docs.zizmor.sh/usage/#operating-modes)); CI sets `GH_TOKEN`.
 
 `uv run python src/fetch.py` fetches the stock profiles pinned in `upstream.lock.toml` (only their JSON files, checked against the locked commit, tree and index version) into `~/.cache/slicer-profiles/upstream`. `tests/check.sh` fetches them, regenerates every preset and compares it with the readable golden files in `tests/golden/`; CI runs it, so no slicer has to be installed. After an intended change, run `tests/check.sh --update` and review `git diff tests/golden`.
 

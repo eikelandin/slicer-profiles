@@ -5,12 +5,12 @@
 const config = {
   title: "slicer-profiles",
   tagline: "Bambu Studio presets for the Bambu Lab H3C: third-party filaments and print styles on the stock parents",
-  url: "https://eschuderer.github.io",
+  url: "https://eikelandin.github.io",
   baseUrl: "/slicer-profiles/",
-  organizationName: "ESchuderer",
+  organizationName: "eikelandin",
   projectName: "slicer-profiles",
   trailingSlash: false,
-  // No link check (owner decision): explicit, since Docusaurus defaults broken links (and from v4 anchors) to throw
+  // No link check: explicit, since Docusaurus defaults broken links (and from v4 anchors) to throw
   onBrokenLinks: "warn",
   onBrokenAnchors: "warn",
   markdown: { format: "detect", hooks: { onBrokenMarkdownLinks: "warn" } },
@@ -22,12 +22,12 @@ const config = {
       ({
         docs: {
           path: "../docs",
-          // docs/agents/ is local agent setup, never published
-          exclude: ["agents/**"],
+          // Keeps docs/agents/ unpublished; a set exclude replaces the defaults (https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#exclude), so they are repeated.
+          exclude: ["**/_*.{js,jsx,ts,tsx,md,mdx}", "**/_*/**", "**/*.test.{js,jsx,ts,tsx}", "**/__tests__/**", "agents/**"],
           routeBasePath: "docs",
           sidebarPath: false,
           // Docusaurus appends the page path relative to site/ ("../docs/install.md").
-          editUrl: "https://github.com/ESchuderer/slicer-profiles/edit/main/site/",
+          editUrl: "https://github.com/eikelandin/slicer-profiles/edit/main/site/",
         },
         blog: false,
         theme: {},
@@ -41,7 +41,7 @@ const config = {
         { to: "/docs/install", label: "Install", position: "left" },
         { to: "/docs/profiles", label: "What the presets do", position: "left" },
         { to: "/docs/catalog", label: "Catalog", position: "left" },
-        { href: "https://github.com/ESchuderer/slicer-profiles", label: "GitHub", position: "right" },
+        { href: "https://github.com/eikelandin/slicer-profiles", label: "GitHub", position: "right" },
       ],
     },
     footer: {

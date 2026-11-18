@@ -1,6 +1,6 @@
 # Install the presets
 
-Download `slicer-profiles-bambu-<version>.zip` from the [latest release](https://github.com/ESchuderer/slicer-profiles/releases/latest) and import it into Bambu Studio. It holds the print and filament presets for the Bambu Lab H3C; every preset is listed in [catalog.md](catalog.md), and `NOTICE.md` in the release names its license.
+Download `slicer-profiles-bambu-<version>.zip` from the [latest release](https://github.com/eikelandin/slicer-profiles/releases/latest) and import it into Bambu Studio. It holds the print and filament presets for the Bambu Lab H3C; every preset is listed in [catalog.md](catalog.md), and `NOTICE.md` in the release names its license.
 
 ## Check the download
 
@@ -28,4 +28,4 @@ unzip -o ~/Downloads/slicer-profiles-bambu-v0.2.0.zip
 ## After the import
 
 - Choose the stock `Bambu Lab H3C <size> nozzle` printer; the presets show for the nozzles they are made for.
-- The presets inherit from Bambu Studio's stock profiles by name. They match the version in the [README](https://github.com/ESchuderer/slicer-profiles/blob/main/README.md); other versions may report a missing parent preset (unverified).
+- The presets inherit from Bambu Studio's stock profiles by name. They match the version in the [README](https://github.com/eikelandin/slicer-profiles/blob/main/README.md); other versions may report a missing parent preset (unverified).
