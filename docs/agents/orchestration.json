@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "startLabel": "cl:ready-for-agent",
+  "trustedAuthors": [],
+  "merge": {
+    "allowed": true,
+    "requiredChecks": ["check"]
+  },
+  "closeIssue": true
+}
