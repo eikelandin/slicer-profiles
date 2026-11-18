@@ -45,6 +45,8 @@ uv run ruff check && uv run ruff format --check && uv run basedpyright && uv run
 uv run shellcheck scripts/*.sh tests/*.sh && uv run actionlint && uv run zizmor --format=github .github && uv run typos && uv run reuse lint
 ```
 
+zizmor runs its online audits only when `GH_TOKEN`, `GITHUB_TOKEN` or `ZIZMOR_GITHUB_TOKEN` is set ([operating modes](https://docs.zizmor.sh/usage/#operating-modes)); CI sets `GH_TOKEN`.
+
 `uv run python src/fetch.py` fetches the stock profiles pinned in `upstream.lock.toml` (only their JSON files, checked against the locked commit, tree and index version) into `~/.cache/slicer-profiles/upstream`. `tests/check.sh` fetches them, regenerates every preset and compares it with the readable golden files in `tests/golden/`; CI runs it, so no slicer has to be installed. After an intended change, run `tests/check.sh --update` and review `git diff tests/golden`.
 
 ## License

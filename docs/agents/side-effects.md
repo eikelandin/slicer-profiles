@@ -4,4 +4,4 @@
 - `src/fetch.py` downloads the pinned stock profile tree on its first run (network) into `$SLICER_PROFILES_CACHE`, default `~/.cache/slicer-profiles/upstream` (src/fetch.py:27). A set `SLICER_PROFILES_BAMBU` replaces the pinned tree in `tests/check.sh`, so unset it before comparing with the golden files.
 - `tests/check.sh --update` replaces `tests/golden/` with the current output. Run it only after an intended output change, and review `git diff tests/golden` before committing.
 - `scripts/release.sh vX.Y.Z --publish NOTES.md` creates a public GitHub release (scripts/release.sh:30). Only the user publishes.
-- Merging a change under `docs/` or `site/` into `main` deploys the public docs site to GitHub Pages (.github/workflows/pages.yml:2-5).
+- Merging a change under `docs/`, `site/` or to `.github/workflows/pages.yml` into `main`, and a manual run of that workflow, deploy the public docs site to GitHub Pages (.github/workflows/pages.yml:2-6).

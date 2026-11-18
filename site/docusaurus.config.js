@@ -22,8 +22,7 @@ const config = {
       ({
         docs: {
           path: "../docs",
-          // docs/agents/ is local agent setup, never published. A set exclude replaces Docusaurus's defaults
-          // (https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#exclude), so they are repeated.
+          // Keeps docs/agents/ unpublished; a set exclude replaces the defaults (https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#exclude), so they are repeated.
           exclude: ["**/_*.{js,jsx,ts,tsx,md,mdx}", "**/_*/**", "**/*.test.{js,jsx,ts,tsx}", "**/__tests__/**", "agents/**"],
           routeBasePath: "docs",
           sidebarPath: false,
