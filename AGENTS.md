@@ -7,7 +7,7 @@
 - Regenerate the docs tables after a data change: `uv run python src/docs.py` (`tests/test_docs.py` fails while they are stale).
 - Generate presets into `out/` without installing: `scripts/build.sh --no-install`. Release files into `dist/`: `scripts/release.sh vX.Y.Z`. Docs site: `npm run build` in `site/`.
 - Changed-files check, run before every push (the CI jobs `python`, `repository` and `generate`; add `npm run build` in `site/` when `site/` or `docs/` changed):
-  `uv run ruff check && uv run ruff format --check && uv run basedpyright && uv run pytest && uv run shellcheck scripts/*.sh tests/*.sh && uv run actionlint && uv run zizmor --offline .github && uv run typos && uv run reuse lint && tests/check.sh`
+  `uv run ruff check && uv run ruff format --check && uv run basedpyright && uv run pytest && uv run shellcheck scripts/*.sh tests/*.sh && uv run actionlint && uv run zizmor --offline .github && uv run typos && uv run reuse lint && uv run python -c 'import json, sys; [json.load(open(f)) for f in sys.argv[1:]]' config/*.json && tests/check.sh && scripts/release.sh v0.0.0`
 
 <!-- cedarloom start -->
 - Before changing a repository, working on issues or pull requests, or researching two or more items: load the `cl-workflow:workflow` skill when the cl-workflow plugin is installed. It picks the workflow and the depth.
@@ -49,6 +49,6 @@
 
 - `docs/agents/`: the coordinator policy (`orchestration.json`), extra worker rules (`worker-rules.md`) and footgun docs. The site build excludes this folder (`site/docusaurus.config.js`).
 - Issue tracker: GitHub Issues of eikelandin/slicer-profiles. The `cl:*` labels steer agent work; `gh label list` shows what each means.
-- Code and data layout: the Layout table in `README.md`. User docs: `docs/install.md`, `docs/profiles.md`, `docs/catalog.md`.
+- Code and data layout: the Layout table in `README.md`. User docs: `docs/install.md`, `docs/profiles.md`, `docs/catalog.md`, `docs/experiments.md`.
 - Every new file needs a license entry in `REUSE.toml` (`uv run reuse lint`).
 - Commit subjects and pull request titles follow [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/), as the history does.
