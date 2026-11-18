@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/ESchuderer/slicer-profiles/releases/latest/download/manifest.schema.json",
+  "$id": "https://github.com/eikelandin/slicer-profiles/releases/latest/download/manifest.schema.json",
   "title": "slicer-profiles release manifest",
   "description": "What a slicer-profiles release contains: the slicer releases it is built for, its files and every preset with its checksum and license. Format version 1.",
   "type": "object",
@@ -42,7 +42,7 @@
         "properties": {
           "kind": { "enum": ["presets", "schema", "notice"] },
           "name": { "type": "string", "pattern": "^[\\w.-]+$" },
-          "url": { "type": "string", "pattern": "^https://github\\.com/ESchuderer/slicer-profiles/releases/download/" },
+          "url": { "type": "string", "pattern": "^https://github\\.com/eikelandin/slicer-profiles/releases/download/" },
           "sha256": { "$ref": "#/$defs/sha256" },
           "size": { "type": "integer", "minimum": 0 }
         }

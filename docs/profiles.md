@@ -78,5 +78,5 @@ Each preset sets the maker's nozzle temperatures and range, and the density wher
 
 ## Limits
 
-- The presets match the Bambu Studio version in the [README](https://github.com/ESchuderer/slicer-profiles/blob/main/README.md). Other versions may report a missing parent preset (unverified).
+- The presets match the Bambu Studio version in the [README](https://github.com/eikelandin/slicer-profiles/blob/main/README.md). Other versions may report a missing parent preset (unverified).
 - Temperatures and drying advice come from the makers' data sheets and are starting points for your own spool.

@@ -6,5 +6,7 @@
     "allowed": true,
     "requiredChecks": ["check"]
   },
+  "riskyPaths": ["src/lint.py", "src/install.py", "scripts", "src/fetch.py", "upstream.lock.toml"],
+  "minPlugin": "0.1.0",
   "closeIssue": true
 }

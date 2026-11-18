@@ -27,7 +27,7 @@ if TYPE_CHECKING:
 
 ROOT = Path(__file__).resolve().parent.parent
 SCHEMA = ROOT / "schemas" / "manifest.schema.json"
-REPOSITORY = "ESchuderer/slicer-profiles"
+REPOSITORY = "eikelandin/slicer-profiles"
 FORMAT = "slicer-profiles-release"
 type Entry = dict[str, str | int | None]
 _PRINTER = printer()

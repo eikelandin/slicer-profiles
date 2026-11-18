@@ -1,14 +1,14 @@
 ## Commands
 
-- Install the pinned Python tools: `uv sync --locked`. Site: `npm ci --ignore-scripts --no-audit --no-fund` in `site/`.
+- Python 3.12 or later on `PATH` (`pyproject.toml`): the scripts call `python3`. Install the pinned Python tools: `uv sync --locked`. Site: `npm ci --ignore-scripts --no-audit --no-fund` in `site/`.
 - Lint and types: `uv run ruff check`, `uv run ruff format --check` (apply: `uv run ruff format`), `uv run basedpyright`.
-- Tests: `uv run pytest`. Generated presets against `tests/golden/`: `tests/check.sh`; after an intended output change, `tests/check.sh --update` and review `git diff tests/golden`.
-- Repository checks: `uv run shellcheck scripts/*.sh tests/*.sh`, `uv run actionlint`, `uv run zizmor --offline .github`, `uv run typos`, `uv run reuse lint`.
+- Tests: `uv run pytest`. Generated presets against `tests/golden/`: `tests/check.sh` (fetches the pinned stock profiles itself); after an intended output change, `tests/check.sh --update` and review `git diff tests/golden`.
+- Repository checks: `uv run shellcheck scripts/*.sh tests/*.sh`, `uv run actionlint`, `uv run zizmor --format=github .github` (CI sets `GH_TOKEN`; without it zizmor skips its online audits, [modes](https://docs.zizmor.sh/usage/#operating-modes)), `uv run typos`, `uv run reuse lint`.
 - Regenerate the docs tables after a data change: `uv run python src/docs.py` (`tests/test_docs.py` fails while they are stale).
-- Generate presets into `out/` without installing: `scripts/build.sh --no-install`. Release files into `dist/`: `scripts/release.sh vX.Y.Z`. Docs site: `npm run build` in `site/`.
-- Agents never run the install form of `scripts/build.sh` (without `--no-install` it writes into the Bambu Studio profile folder) and never run `scripts/release.sh --publish`: both stay with the owner.
+- Generate presets into `out/` without installing: `uv run python src/fetch.py` first (without it `scripts/build.sh --no-install` falls back to the installed Bambu Studio in `/opt/bambustudio-bin`, `src/resolve.py`), then `scripts/build.sh --no-install`. Release files into `dist/`: commit first, `scripts/release.sh vX.Y.Z` builds from `git archive HEAD`, not the working tree. Docs site: `npm run build` in `site/`.
+- Agents never run the install form of `scripts/build.sh` (without `--no-install` it writes into the Bambu Studio profile folder) and never run `scripts/release.sh --publish`: both stay with the owner. Agents never add the `cl:ready-for-agent` label themselves.
 - Changed-files check, run before every push (the CI jobs `python`, `repository` and `generate`; add `npm run build` in `site/` when `site/` or `docs/` changed):
-  `uv run ruff check && uv run ruff format --check && uv run basedpyright && uv run pytest && uv run shellcheck scripts/*.sh tests/*.sh && uv run actionlint && uv run zizmor --offline .github && uv run typos && uv run reuse lint && uv run python -c 'import json, sys; [json.load(open(f)) for f in sys.argv[1:]]' config/*.json && tests/check.sh && scripts/release.sh v0.0.0`
+  `uv run ruff check && uv run ruff format --check && uv run basedpyright && uv run pytest && uv run shellcheck scripts/*.sh tests/*.sh && uv run actionlint && uv run zizmor --format=github .github && uv run typos && uv run reuse lint && uv run python -c 'import json, sys; [json.load(open(f)) for f in sys.argv[1:]]' config/*.json && tests/check.sh && scripts/release.sh v0.0.0`
 
 <!-- cedarloom start -->
 - Before changing a repository, working on issues or pull requests, or researching two or more items: load the `cl-workflow:workflow` skill when the cl-workflow plugin is installed. It picks the workflow and the depth.

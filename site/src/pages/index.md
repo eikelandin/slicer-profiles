@@ -6,4 +6,4 @@ Bambu Studio user presets for the Bambu Lab H3C: the owner's third-party filamen
 - [What the presets do](/docs/profiles)
 - [Every preset by name](/docs/catalog)
 - [Experiments](/docs/experiments)
-- [Source and releases](https://github.com/ESchuderer/slicer-profiles)
+- [Source and releases](https://github.com/eikelandin/slicer-profiles)
