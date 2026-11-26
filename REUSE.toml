@@ -21,6 +21,7 @@ path = [
     ".python-version",
     ".gitignore",
     "REUSE.toml",
+    "site/scripts/**",
     "site/package.json",
     "site/package-lock.json",
     "site/docusaurus.config.js",

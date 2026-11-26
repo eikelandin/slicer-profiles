@@ -1,8 +1,13 @@
 // @ts-check
 // The docs site: the Markdown pages in ../docs, generated tables included (src/docs.py), published on GitHub Pages.
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+const { repoFacts } = require("./scripts/repo-facts.mts");
+
+const repo = "eikelandin/slicer-profiles";
+
+// An async config creator, so the build can read the repository facts first.
+/** @type {() => Promise<import('@docusaurus/types').Config>} */
+module.exports = async () => ({
   title: "slicer-profiles",
   tagline: "Bambu Studio presets for the Bambu Lab H3C: third-party filaments and print styles on the stock parents",
   url: "https://eikelandin.github.io",
@@ -30,7 +35,7 @@ const config = {
           editUrl: "https://github.com/eikelandin/slicer-profiles/edit/main/site/",
         },
         blog: false,
-        theme: {},
+        theme: { customCss: "./src/css/repo-widget.css" },
       }),
     ],
   ],
@@ -41,13 +46,12 @@ const config = {
         { to: "/docs/install", label: "Install", position: "left" },
         { to: "/docs/profiles", label: "What the presets do", position: "left" },
         { to: "/docs/catalog", label: "Catalog", position: "left" },
-        { href: "https://github.com/eikelandin/slicer-profiles", label: "GitHub", position: "right" },
+        // read once per build, the browser makes no request to GitHub
+        { type: "custom-repo", repo, facts: await repoFacts(repo), position: "right" },
       ],
     },
     footer: {
       copyright: "Code and docs MIT, data and presets CC0 1.0",
     },
   },
-};
-
-module.exports = config;
+});

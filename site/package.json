@@ -6,7 +6,8 @@
   "scripts": {
     "build": "docusaurus build",
     "start": "docusaurus start",
-    "serve": "docusaurus serve"
+    "serve": "docusaurus serve",
+    "test": "node --test scripts/*.test.mts"
   },
   "engines": {
     "node": ">=20.0"
