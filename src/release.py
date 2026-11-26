@@ -113,7 +113,7 @@ Built from https://github.com/{REPOSITORY} at commit `{commit}`.
 |---|---|
 | `slicer-profiles-{SLICER}-{version}.zip` | {APP_LICENSE} |
 | `manifest.json`, `SHA256SUMS` | CC0-1.0 |
-| `manifest.schema.json`, this file | ISC |
+| `manifest.schema.json`, this file | MIT |
 
 CC0-1.0 (https://creativecommons.org/publicdomain/zero/1.0/) is a public domain dedication: no conditions,
 and no warranty, trademark or patent rights. It covers only what this project made. The presets name a
@@ -121,7 +121,7 @@ stock preset of each slicer as their parent and hold only the values set by this
 presets are not copied and keep their own license, and values taken from makers' data sheets, the
 slicers' stock profiles and filament databases are cited facts, not relicensed.
 
-The ISC files are under this license:
+The MIT files are under this license:
 
 {(ROOT / "LICENSE").read_text(encoding="utf-8")}"""
 
