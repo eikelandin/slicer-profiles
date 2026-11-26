@@ -10,7 +10,7 @@
     "test": "node --test scripts/*.test.mts"
   },
   "engines": {
-    "node": ">=20.0"
+    "node": ">=22.18"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.2",

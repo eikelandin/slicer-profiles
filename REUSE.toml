@@ -30,6 +30,13 @@ precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 ESchuderer"
 SPDX-License-Identifier = "MIT"
 
+# Repository widget: own code plus GitHub Octicons icon paths (https://github.com/primer/octicons), both MIT.
+[[annotations]]
+path = "site/src/components/RepoWidget.tsx"
+precedence = "aggregate"
+SPDX-FileCopyrightText = ["2026 ESchuderer", "2026 GitHub Inc."]
+SPDX-License-Identifier = "MIT"
+
 # Own data: the tables and the generated presets (golden files, licensed like the release zip). Values
 # taken from maker data sheets, slicer stock profiles and filament databases are cited as third-party
 # facts, and the stock parents are named, not copied.
