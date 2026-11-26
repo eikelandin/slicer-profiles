@@ -1,5 +1,7 @@
 # slicer-profiles
 
+[![Sponsor](https://img.shields.io/badge/Sponsor-eikelandin-db61a2?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/eikelandin)
+
 Generates Bambu Studio user presets for the Bambu Lab H3C from a few tables: third-party filaments on the H3C Generic parents for each nozzle, and print styles (Strong, MM-Support) on the stock print presets, so a change is made once in data and reaches every nozzle. Download the ready-made zip or generate your own.
 
 v0.1.0 and earlier targeted the Snapmaker U1, Bambu Lab P2S and Qidi X-Max 4; those printers are no longer maintained, and their release stays available as history. OrcaSlicer returns as a target once a stable release ships H3C profiles.
