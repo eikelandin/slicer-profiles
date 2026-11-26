@@ -2,7 +2,7 @@
   "name": "slicer-profiles-site",
   "private": true,
   "description": "Docs site of slicer-profiles, built from ../docs",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "build": "docusaurus build",
     "start": "docusaurus start",

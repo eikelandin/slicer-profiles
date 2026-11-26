@@ -2,7 +2,7 @@ version = 1
 SPDX-PackageName = "slicer-profiles"
 SPDX-PackageDownloadLocation = "https://github.com/eikelandin/slicer-profiles"
 
-# Code, docs, the docs site and the manifest schema: ISC.
+# Code, docs, the docs site and the manifest schema: MIT.
 [[annotations]]
 path = [
     "src/**",
@@ -27,7 +27,7 @@ path = [
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 ESchuderer"
-SPDX-License-Identifier = "ISC"
+SPDX-License-Identifier = "MIT"
 
 # Own data: the tables and the generated presets (golden files, licensed like the release zip). Values
 # taken from maker data sheets, slicer stock profiles and filament databases are cited as third-party
