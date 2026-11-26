@@ -1,0 +1,28 @@
+name: Work item
+description: A change to make or a question to research.
+labels: [cl:triage]
+body:
+  - type: textarea
+    id: plain
+    attributes:
+      label: In plain words
+      description: The outcome wanted, or the question to answer, so that someone who does not know the code understands it.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Why it matters, what is known, links. For research, the sources to read.
+  - type: textarea
+    id: done
+    attributes:
+      label: Done when
+      description: One check per line that someone can run or see. For research, where the report goes and what it holds.
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: What this item leaves out. Leave it empty when nothing needs excluding.
