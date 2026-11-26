@@ -1,0 +1,30 @@
+name: Feature request
+description: A new capability or a change to an existing one.
+labels: [enhancement, cl:triage]
+body:
+  - type: textarea
+    id: plain
+    attributes:
+      label: In plain words
+      description: What you want and what it lets you do, said so that someone who does not know the code understands it.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What you are trying to do and what stops you today.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: How it should work, as you would use it.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: Other ways to solve it, including workarounds you use now.
