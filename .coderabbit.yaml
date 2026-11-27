@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: en-US
+reviews:
+  profile: chill
+  high_level_summary: true
+  poem: false
+  sequence_diagrams: false
+  auto_review:
+    enabled: true
+    drafts: false
+    ignore_usernames:
+      - "dependabot[bot]"
+  path_filters:
+    - "!**/uv.lock"
+    - "!**/package-lock.json"
+  tools:
+    # Duplicates of CI gates stay on: a triggered review comments on the diff lines.
+    actionlint: { enabled: true }
+    zizmor: { enabled: true }
+    gitleaks: { enabled: true }
+    osvScanner: { enabled: true }
+    shellcheck: { enabled: true }
+    markdownlint: { enabled: true }
+    yamllint: { enabled: true }
+    ruff: { enabled: true }
+    # Off: no rule set committed, or a second linter that contradicts the repository's own.
+    ast-grep: { enabled: false }
+    languagetool: { enabled: false }
+    eslint: { enabled: false }
+    semgrep: { enabled: false }
+    opengrep: { enabled: false }
+knowledge_base:
+  code_guidelines:
+    enabled: true
+    filePatterns:
+      - "AGENTS.md"
+      - "docs/agents/**/*.md"
