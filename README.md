@@ -1,6 +1,10 @@
 # slicer-profiles
 
 [![Sponsor](https://img.shields.io/badge/Sponsor-eikelandin-db61a2?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/eikelandin)
+[![CI](https://github.com/eikelandin/slicer-profiles/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/eikelandin/slicer-profiles/actions/workflows/ci.yml)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/eikelandin/slicer-profiles/badge)](https://scorecard.dev/viewer/?uri=github.com/eikelandin/slicer-profiles)
+[![License: MIT code, CC0-1.0 data tables and presets](https://img.shields.io/badge/license-MIT%20code%20%2B%20CC0--1.0%20data-blue)](REUSE.toml)
+[![Release](https://img.shields.io/github/v/release/eikelandin/slicer-profiles?sort=semver)](https://github.com/eikelandin/slicer-profiles/releases/latest)
 
 Generates Bambu Studio user presets for the Bambu Lab H3C from a few tables: third-party filaments on the H3C Generic parents for each nozzle, and print styles (Strong, MM-Support) on the stock print presets, so a change is made once in data and reaches every nozzle. Download the ready-made zip or generate your own.
 
